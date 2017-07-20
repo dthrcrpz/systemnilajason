@@ -1,0 +1,83 @@
+body{
+	background-image: url('/dagupan.png');
+	font-family: 'Titillium Web', sans-serif;
+	background-attachment: fixed;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#searchContainer{
+
+}
+
+#sortings{
+	width: 200px;
+	margin-top: -23px;
+	margin-left: 292px;
+}
+
+.hotelsna{
+	background-color: #e6f2ff;
+}
+
+.hotelName{
+	margin-left: 160px;
+}
+
+.hotelAddress{
+	margin-left: 160px;
+}
+
+.hotelPrice{
+	margin-left: 160px;
+}
+
+.hotelURL{
+	margin-left: 160px;
+}
+
+.hotelRT{
+	margin-left: 160px;
+}
+
+.hotelRTs{
+	margin-left: 150px;
+}
+
+#filterPanel{
+	padding-left: 10px;
+}
+
+.footer{
+	height: 60px;
+	text-align: center;
+}
+
+#theNav{
+	text-align: center;
+}
+
+#navbar-brand{
+	margin-left: 0px;
+}
+
+.hotelSummary{
+	margin-left: 160px;
+}
+
+.btnLogin{
+	height: 45px;
+}
+
+.dividers{
+	border: 0.5px solid black;
+	width: 239px;
+}
+
+.panel{
+	border: 1px solid teal;
+}
