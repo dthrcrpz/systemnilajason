@@ -9,6 +9,7 @@ Route::group(['middleware' => ['web']], function(){
 	Route::get('logout', 'LoginController@logout');
 	Route::get('viewhotels', 'PagesController@viewhotels')->middleware('checkuser');
 	Route::get('viewhotels/delete/{hotel}', 'HotelsController@delete')->middleware('checkuser');
+	Route::get('viewhotels/restore/{hotel}', 'HotelsController@restore')->middleware('checkuser');
 	Route::get('viewhotels/edit/{hotel}', 'PagesController@editHotel')->middleware('checkuser');
 	Route::patch('viewhotels/edit/{hotel}', 'HotelsController@update')->middleware('checkuser');
 	Route::get('edithotel', 'PagesController@editmyhotel')->middleware('checkuser');

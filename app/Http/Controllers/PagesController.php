@@ -54,8 +54,7 @@ class PagesController extends Controller
     }
 
     public function viewhotels(){
-        $h = new Hotel;
-        $hotels = $h->all();
+        $hotels = Hotel::withTrashed()->get();
         return view('viewhotels', compact('hotels'));
     }
 

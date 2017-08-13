@@ -270,4 +270,9 @@ class HotelsController extends Controller
                 <span class="glyphicon glyphicon-thumbs-down"></span> '.$check = $rt->where('hotel_id', $r->h)->where('value', 0)->count();
         }
     }
+
+    public function restore($hotel){
+        $hotel = Hotel::withTrashed()->where('id', $hotel)->restore();
+        return back();
+    }
 }
