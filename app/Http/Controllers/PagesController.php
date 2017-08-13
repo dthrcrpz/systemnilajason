@@ -34,8 +34,9 @@ class PagesController extends Controller
             $hotels = $h->orderBy('price_range', 'asc')->get();
             $ro = new Room;
             return view('index', compact('hotels', 'ro', 'rt'));
-        }elseif($req->sortby == 'ratings'){
-            $hotels = $h->orderBy(count($h->ratings), 'desc')->get();
+        }elseif($req->sortby == 'rating'){
+            $rt = new Rating;
+            $hotels = $h->orderBy('ratings', 'desc')->get();
             $ro = new Room;
             return view('index', compact('hotels', 'ro', 'rt'));
         }else{

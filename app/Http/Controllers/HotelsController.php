@@ -248,8 +248,8 @@ class HotelsController extends Controller
             $rt->value = 1;
             $rt->save();
             $h = new Hotel;
-            // $hotel = $h->where('id', $r->h)->first();
-            // $hotel->update(['ratings' => $hotel->ratings->where('value', 1)->count()]);
+            $hotel = $h->where('id', $r->h)->first();
+            $hotel->update(['ratings' => $rt->where('hotel_id', $hotel->id)->where('value', '1')->count()]);
             return '<span class="glyphicon glyphicon-thumbs-up"></span> '.$check = $rt->where('hotel_id', $r->h)->where('value', 1)->count().' &nbsp;&nbsp;&nbsp;
                 <span class="glyphicon glyphicon-thumbs-down"></span> '.$check = $rt->where('hotel_id', $r->h)->where('value', 0)->count();
         }
