@@ -127,8 +127,9 @@ class HotelsController extends Controller
         $h = new Hotel;
         $q = $request->q;
         $ro = new Room;
+        $rt = new Rating;
         $hotels = $h->where('name', 'LIKE', '%'.$q.'%')->orWhere('address', 'LIKE', '%'.$q.'%')->orWhere('pricefrom', 'LIKE', '%'.$q.'%')->orWhere('priceto', 'LIKE', '%'.$q.'%')->get();
-        return view('index', compact('hotels', 'ro'));
+        return view('index', compact('hotels', 'ro', 'rt'));
     }
 
     public function advancedsearch(Request $request){
@@ -246,6 +247,9 @@ class HotelsController extends Controller
             $rt->rater = session('myIP');
             $rt->value = 1;
             $rt->save();
+            $h = new Hotel;
+            // $hotel = $h->where('id', $r->h)->first();
+            // $hotel->update(['ratings' => $hotel->ratings->where('value', 1)->count()]);
             return '<span class="glyphicon glyphicon-thumbs-up"></span> '.$check = $rt->where('hotel_id', $r->h)->where('value', 1)->count().' &nbsp;&nbsp;&nbsp;
                 <span class="glyphicon glyphicon-thumbs-down"></span> '.$check = $rt->where('hotel_id', $r->h)->where('value', 0)->count();
         }

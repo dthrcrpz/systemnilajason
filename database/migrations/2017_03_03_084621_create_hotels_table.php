@@ -30,6 +30,7 @@ class CreateHotelsTable extends Migration
             $table->string('pricefrom')->nullable();
             $table->string('priceto')->nullable();
             $table->string('activated')->nullable();
+            $table->integer('ratings')->nullable();
             $table->timestamps();
         });
     }

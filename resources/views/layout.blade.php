@@ -80,6 +80,6 @@
     </div>
    </body>
     <footer class="footer">
-        jasonsolis@gmail.com || Lyceum-Northwestern University || Tapuac District, Dagupan City, Pangasinan 
+        hotelcata@gmail.com || Lyceum-Northwestern University || Tapuac District, Dagupan City, Pangasinan 
     </footer>
 </html>

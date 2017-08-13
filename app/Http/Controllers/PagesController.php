@@ -21,26 +21,27 @@ class PagesController extends Controller
     public function hotels(Request $req){
     	$h = new Hotel;
         $r = new Room;
+        $rt = new Rating;
         if($r->sortby == 'name'){
             $hotels = $h->orderBy('name', 'asc')->get();
             $ro = new Room;
-            return view('index', compact('hotels', 'ro'));
+            return view('index', compact('hotels', 'ro', 'rt'));
         }elseif($req->sortby == 'address'){
             $hotels = $h->orderBy('address', 'asc')->get();
             $ro = new Room;
-            return view('index', compact('hotels', 'ro'));
+            return view('index', compact('hotels', 'ro', 'rt'));
         }elseif($req->sortby == 'price'){
             $hotels = $h->orderBy('price_range', 'asc')->get();
             $ro = new Room;
-            return view('index', compact('hotels', 'ro'));
+            return view('index', compact('hotels', 'ro', 'rt'));
         }elseif($req->sortby == 'ratings'){
             $hotels = $h->orderBy(count($h->ratings), 'desc')->get();
             $ro = new Room;
-            return view('index', compact('hotels', 'ro'));
+            return view('index', compact('hotels', 'ro', 'rt'));
         }else{
             $hotels = $h->all();
             $ro = new Room;
-            return view('index', compact('hotels', 'ro'));
+            return view('index', compact('hotels', 'ro', 'rt'));
         }
     }
 
