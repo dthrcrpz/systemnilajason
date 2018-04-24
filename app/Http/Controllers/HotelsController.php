@@ -30,10 +30,10 @@ class HotelsController extends Controller
 
     public function delete(Hotel $hotel){
         foreach($hotel->rooms as $room){$room->delete();}
-        if($hotel->photo){foreach($hotel->photo as $photo){$photo->delete();}}
-        if($hotel->roomtype){foreach($hotel->roomtype as $roomtype){$roomtype->delete();}}
-        if($hotel->ratings){foreach($hotel->ratings as $rating){$rating->delete();}}
-        if($hotel->comments){foreach($hotel->comments as $comment){$comment->delete();}}
+        if($hotel->photos()->count() > 0){foreach($hotel->photos as $photo){$photo->delete();}}
+        if($hotel->roomtypes()->count() > 0){foreach($hotel->roomtypes as $roomtype){$roomtype->delete();}}
+        if($hotel->ratings()->count() > 0){foreach($hotel->ratings as $rating){$rating->delete();}}
+        if($hotel->comments()->count() > 0){foreach($hotel->comments as $comment){$comment->delete();}}
         $hotel->delete();
         return back();
     }

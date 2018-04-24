@@ -11,11 +11,11 @@ class Hotel extends Model
 
     protected $fillable = ['username', 'password', 'name', 'address', 'url', 'summary', 'photo', 'pricefrom', 'priceto', 'map', 'contactnumber', 'latitude', 'longitude', 'ratings'];
 
-    public function photo(){
+    public function photos(){
     	return $this->hasMany(Photo::class);
     }
 
-    public function roomtype(){
+    public function roomtypes(){
     	return $this->hasMany(Roomtype::class);
     }
 
