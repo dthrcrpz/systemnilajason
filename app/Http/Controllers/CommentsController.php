@@ -23,10 +23,8 @@ class CommentsController extends Controller
     	return view('commentscontent', compact('comments'));
     }
 
-    public function delete(Request $r){
-        $c = new Comment;
-        $c->where('id', $r->comment_id)->first();
-        $c->delete();
+    public function delete(Comment $item){
+        $item->delete();
         return redirect('/');
     }
 }

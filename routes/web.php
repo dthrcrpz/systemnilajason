@@ -37,5 +37,5 @@ Route::group(['middleware' => ['web']], function(){
 	Route::get('comments/view', 'CommentsController@view');
 	Route::get('managerooms', 'PagesController@managerooms')->middleware('checkuser');
 	Route::post('managerooms', 'RoomsController@managerooms')->middleware('checkuser');
-	Route::get('comment/delete', 'CommentsController@delete')->middleware('checkuser');
+	Route::get('comment/delete/{item}', 'CommentsController@delete')->middleware('checkuser');
 });

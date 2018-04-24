@@ -96,7 +96,7 @@ function hotelComment(hotelid){
 }
 
 function deleteComment(commentid){
-    window.location.assign('/comment/delete?comment_id'+commentid);
+    window.location.assign('/comment/delete/'+commentid);
 }
 
 var hotelToDelete = 0;
